@@ -47,24 +47,26 @@ function handleDonationCard(
     let mainBalance = currentBalance("mainBalance");
     let donationBalance = donationBalnce(donationBalanceId);
     let donationAmount = allInputValue(donationInputId);
+    let donationInput = document.getElementById(donationInputId);
+
     if (
       Math.sign(donationAmount) === -1 ||
-      donationAmount > mainBalance ||
-      isNaN(mainBalance) ||
-      isNaN(donationAmount)
+      isNaN(donationAmount) ||
+      donationInput.value.match(/[^\d.]/)
     ) {
       let donationInput = document.getElementById(donationInputId);
       donationInput.value = "";
       alert("INVALID INPUT");
       return;
+    } else if (donationAmount > mainBalance) {
+      alert("Not have enough balance");
     } else {
       let donationPlace = document.getElementById(donationPlaces).innerHTML;
       let availableBalance = document.getElementById("mainBalance");
       let avalibleDonation = document.getElementById(donationBalanceId);
       let donationInput = document.getElementById(donationInputId);
       let titleDonation = document.getElementById(donationTitle).innerText;
-      let now = new Date();
-      let time = now.toLocaleTimeString();
+
       let modalAmount = document.getElementById("amount");
       let transitionHistory = document.getElementById("tansitionHistory");
       let minusDonation = mainBalance - donationAmount;
@@ -74,11 +76,24 @@ function handleDonationCard(
       donationInput.value = "";
       modalAmount.innerHTML = `${donationPlace} BDT ${donationAmount} `;
 
+      /************* Date *******************/
+      const currentTime = new Date();
+      const date = currentTime.getDate();
+      const month = currentTime.getMonth() + 1;
+      const year = currentTime.getFullYear();
+      /************* Time *******************/
+      const time = new Date().toLocaleTimeString();
+
+      const formateDateTime = `
+      Date: ${date}/${month}/${year} Time: ${time}
+      `;
+
       my_modal_1.showModal();
+
       transitionHistory.innerHTML += `
       <div class=" border  border-gray-400 p-3 rounded-2xl shadow-lg mb-2">
         <p class=" font-bold py-1">${donationAmount} ${titleDonation}</p>
-        <p>${time}</p>
+        <p>${formateDateTime}</p>
       </div>
       `;
     }

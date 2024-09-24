@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donate Bangladesh</title>
+    <!-- favicon icon  -->
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <!-- tailwind CDN  -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
       rel="stylesheet"
@@ -21,22 +24,24 @@
   </head>
   <body class="font-Lexend">
     <nav
-      class="max-h-full bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border border-gray-100"
+      class="max-h-full bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20"
       id="navbar"
     >
       <div
-        class="md:flex md:justify-between container mx-auto items-center py-4"
+        class="md:flex md:justify-between px-8 mx-auto items-center py-4 bg-nav"
       >
-        <div class="mx-6 my-3 md:mx-0 md:my-0">
+        <div class="mb-4 md:mb-0">
           <button class="btn bg-greenTransparent" id="blogPage">Blog</button>
         </div>
-        <div class="flex items-center text-center justify-center">
+        <div class="flex items-center text-center justify-center mb-2 md:mb-0">
           <img src="./assets/logo.png" alt="" class="mr-3" />
           <h2 class="text-2xl font-semibold">Donate Bangladesh</h2>
         </div>
         <div class="flex items-center text-center justify-center">
           <img src="./assets/coin.png" alt="" />
-          <h2 class="text-2xl font-semibold pl-2" id="mainBalance">5000</h2>
+          <h2 class="text-2xl font-semibold pl-2">
+            <span id="mainBalance">10000</span> <span>BDT</span>
+          </h2>
         </div>
       </div>
 
@@ -53,7 +58,9 @@
     <header id="donationSection">
       <div class="container mx-auto pt-5 pb-10">
         <!-- Frist Card Here  -->
-        <div class="card card-compact w-auto shadow-md p-5">
+        <div
+          class="card card-compact w-auto shadow-md p-5 border border-gray-600 m-2"
+        >
           <div
             class="lg:grid justify-evenly grid-cols-2 space-y-4 md:space-x-4 space-x-0"
           >
@@ -72,8 +79,10 @@
                 </h2>
               </button>
               <h2 id="title1" class="card-title">
-                Donate for Flood at <span id="place1">Noakhali</span> ,
-                Bangladesh
+                <p>
+                  Donate for Flood at <span id="place1">Noakhali</span> ,
+                  Bangladesh
+                </p>
               </h2>
               <p>
                 Donate now to support flood victims in Noakhali, Bangladesh.
@@ -102,7 +111,9 @@
         </div>
 
         <!-- Secound Card Here  -->
-        <div class="card card-compact w-auto shadow-md p-5">
+        <div
+          class="card card-compact w-auto shadow-md p-5 border border-gray-600 m-2"
+        >
           <div
             class="lg:grid justify-evenly grid-cols-2 space-y-4 md:space-x-4 space-x-0"
           >
@@ -121,8 +132,10 @@
                 </h2>
               </button>
               <h2 class="card-title" id="title2">
-                Donate for Flood Relief in
-                <span id="place2">Feni</span> ,Bangladesh
+                <p>
+                  Donate for Flood Relief in
+                  <span id="place2">Feni</span> ,Bangladesh
+                </p>
               </h2>
               <p>
                 Donate today to support flood relief efforts in Feni,
@@ -151,7 +164,9 @@
         </div>
 
         <!-- Third Card Here  -->
-        <div class="card card-compact w-auto shadow-md p-5">
+        <div
+          class="card card-compact w-auto shadow-md p-5 border border-gray-600 m-2"
+        >
           <div
             class="lg:grid justify-evenly grid-cols-2 space-y-4 md:space-x-4 space-x-0"
           >
@@ -170,7 +185,9 @@
                 </h2>
               </button>
               <h2 class="card-title" id="title3">
-                Aid for Injured in the <span id="place3">Quota Movement</span>
+                <p>
+                  Aid for Injured in the <span id="place3">Quota Movement</span>
+                </p>
               </h2>
               <p>
                 Support the injured victims of the Quota Movement in Bangladesh.
@@ -200,7 +217,9 @@
         </div>
 
         <!-- Fourth Card Here -->
-        <div class="card card-compact w-auto shadow-md p-5">
+        <div
+          class="card card-compact w-auto shadow-md p-5 border border-gray-600 m-2"
+        >
           <div
             class="lg:grid justify-evenly grid-cols-2 space-y-4 md:space-x-4 space-x-0"
           >
@@ -219,7 +238,9 @@
                 </h2>
               </button>
               <h2 class="card-title" id="title4">
-                Support for Flood Victims in <span id="place4">Comillah</span>
+                <p>
+                  Support for Flood Victims in <span id="place4">Comillah</span>
+                </p>
               </h2>
               <p>
                 Support for Flood Victims in Comilla** Help flood victims in
@@ -259,7 +280,7 @@
     <dialog id="my_modal_1" class="modal">
       <div class="modal-box bg-gray-300">
         <div class="text-center p-6">
-          <h2 class="text-bold text-3xl mb-2">Congrates</h2>
+          <h2 class="font-bold text-3xl mb-3">Congrates!</h2>
           <img src="./assets/coin.png" alt="" class="mx-auto mb-3" />
           <p class="text-2xl font-semibold">
             You Have Dontated for <span id="places"></span>
