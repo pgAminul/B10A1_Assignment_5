@@ -92,7 +92,7 @@ function handleDonationCard(
 
       transitionHistory.innerHTML += `
       <div class=" border  border-gray-400 p-3 rounded-2xl shadow-lg mb-2">
-        <p class=" font-bold py-1">${donationAmount} ${titleDonation}</p>
+        <p class=" font-bold py-1">${donationAmount} taka is ${titleDonation}</p>
         <p>${formateDateTime}</p>
       </div>
       `;
